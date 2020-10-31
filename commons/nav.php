@@ -2,9 +2,9 @@
 
 <nav class="nav">
 	<ul class="nav__list">
-		<?php if(menu_atas) : ?>	
+		<?php if(menu_atas) : ?>
 			<li class="nav__item nav__item--active">
-				<a href="<?= site_url('first') ?>" class="nav__link"><i class="fa fa-home"></i></a>
+				<a href="<?= site_url(); ?>" class="nav__link"><i class="fa fa-home"></i></a>
 			</li>
 			<?php foreach($menu_atas as $menu) : ?>
 				<li class="nav__item <?php count(menu['submenu']) > 0 and print('nav__item--has-dropdown') ?>">
@@ -21,6 +21,9 @@
 							</ul>
 						<?php endif ?>
 			<?php endforeach ?>
+			<li class="nav__item nav__item">
+				<a href="<?= site_url('siteman'); ?>" class="nav__link">Login</a>
+			</li>
 		<?php endif ?>
 	</ul>
 </nav>
